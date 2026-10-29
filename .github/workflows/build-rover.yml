@@ -1,0 +1,32 @@
+name: Build Rover-Bot firmware
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  build:
+    name: ${{ matrix.variant }}
+    runs-on: ubuntu-latest
+    container:
+      image: espressif/idf:v6.1
+    strategy:
+      fail-fast: false
+      matrix:
+        variant:
+          - rover-bot-tft
+          - rover-bot-tft-flip
+          - rover-bot-tft-rgb
+          - rover-bot-tft-flip-rgb
+          - rover-bot-tft-invert
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build
+        shell: bash
+        run: |
+          source "$IDF_PATH/export.sh"
+          python scripts/build.py rover-bot --name "${{ matrix.variant }}" --language en-US
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.variant }}
+          path: build/merged-binary.bin
+          if-no-files-found: error
