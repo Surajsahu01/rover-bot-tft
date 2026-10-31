@@ -9,7 +9,9 @@
                 "camera_vflip": false
             },
             "sdkconfig_append": [
-                "CONFIG_ROVER_TFT_FLIP=n"
+                "CONFIG_ROVER_TFT_FLIP=n",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_USE_AUDIO_PROCESSOR=n"
             ]
         },
         {
@@ -19,7 +21,9 @@
                 "camera_vflip": false
             },
             "sdkconfig_append": [
-                "CONFIG_ROVER_TFT_FLIP=y"
+                "CONFIG_ROVER_TFT_FLIP=y",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_USE_AUDIO_PROCESSOR=n"
             ]
         },
         {
@@ -29,7 +33,9 @@
                 "camera_vflip": false
             },
             "sdkconfig_append": [
-                "CONFIG_ROVER_TFT_RGB_ORDER=y"
+                "CONFIG_ROVER_TFT_RGB_ORDER=y",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_USE_AUDIO_PROCESSOR=n"
             ]
         },
         {
@@ -40,7 +46,9 @@
             },
             "sdkconfig_append": [
                 "CONFIG_ROVER_TFT_FLIP=y",
-                "CONFIG_ROVER_TFT_RGB_ORDER=y"
+                "CONFIG_ROVER_TFT_RGB_ORDER=y",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_USE_AUDIO_PROCESSOR=n"
             ]
         },
         {
@@ -50,7 +58,9 @@
                 "camera_vflip": false
             },
             "sdkconfig_append": [
-                "CONFIG_ROVER_TFT_INVERT=y"
+                "CONFIG_ROVER_TFT_INVERT=y",
+                "CONFIG_WAKE_WORD_DISABLED=y",
+                "CONFIG_USE_AUDIO_PROCESSOR=n"
             ]
         }
     ]
